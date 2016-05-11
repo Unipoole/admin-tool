@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+    <!-- Exception page. -->
+    <definition name="exception-handler" extends="template-main">
+        <put-attribute name="primary-content" value="/WEB-INF/jsp/contents/exception.jsp" />
+    </definition>	
+    <!-- Concrete page. To use this page, your controller must return the name "search-tiles" -->
+    <definition name="search-tiles" extends="template-main">
+        <put-attribute name="primary-content" value="/WEB-INF/jsp/contents/search.jsp" />
+    </definition>	
+        
+    <!-- Concrete page. To use this page, your controller must return the name "setting-tiles" -->
+    <definition name="settings-tiles" extends="template-main">
+        <put-attribute name="primary-content" value="/WEB-INF/jsp/contents/settings.jsp" />
+    </definition>
+    
+    <!-- Concrete page. To use this page, your controller must return the name "Main-tiles" -->
+    <definition name="main-tiles" extends="template-main">
+        <put-attribute name="primary-content" value="/WEB-INF/jsp/contents/main.jsp" />
+    </definition>
+    
+    <!-- Concrete page. To use this page, your controller must return the name "modules-tiles" -->
+    <definition name="modules-tiles" extends="template-main">
+        <put-attribute name="primary-content" value="/WEB-INF/jsp/contents/modules.jsp" />
+    </definition>
+    
+    <!-- Concrete page. To use this page, your controller must return the name "module-tiles" -->
+    <definition name="module-tiles" extends="template-main">
+        <put-attribute name="primary-content" value="/WEB-INF/jsp/contents/module.jsp" />
+    </definition>
+    
+    <!-- Concrete page. To use this page, your controller must return the name "module-tiles" -->
+    <definition name="clientCreate-tiles" extends="template-main">
+        <put-attribute name="primary-content" value="/WEB-INF/jsp/contents/createClient.jsp" />
+    </definition>
+</tiles-definitions>
