@@ -12,15 +12,15 @@
     <packaging>war</packaging>
     <name>Unipoole Admin Tool</name>
     <description>The Unipoole Admin Tool allow admin staff to create Unipoole clients.</description>
-    <url>http://unipoole.opencollab.co.za/reports/admin-tool</url>
+    <url>https://github.com/Unipoole/admin-tool</url>
      <!-- 
         The source control locations.
         Note that the source control name must be the same as the artifact name
     -->
     <scm>
-        <connection>scm:svn:http://svn.opencollab.co.za:18080/svn/unipoole/${project.artifactId}/trunk</connection>
-        <developerConnection>scm:svn:http://svn.opencollab.co.za:18080/svn/unipoole/${project.artifactId}/trunk</developerConnection>
-        <url>http://svn.opencollab.co.za:18080/viewvc/unipoole/${project.artifactId}/trunk</url>
+        <connection>scm:git:https://github.com/Unipoole/admin-tool.git</connection>
+        <developerConnection>scm:git:https://github.com/Unipoole/admin-tool.git</developerConnection>
+        <url>https://github.com/Unipoole/admin-tool</url>
     </scm>
     <properties>
         <sonar.language>java</sonar.language>
@@ -82,6 +82,30 @@
             <artifactId>axis-saaj</artifactId>
         </dependency>
     </dependencies>
+    <repositories>
+        <repository>
+            <name>OpenCollab Nexus Release Repo</name>
+            <id>oc-nexus-releases</id>
+            <url>http://nexus.opencollab.co.za/nexus/content/repositories/releases</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <name>OpenCollab Nexus Snapshot Repo</name>
+            <id>oc-nexus-snapshots</id>
+            <url>http://nexus.opencollab.co.za/nexus/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
     <build>
         <finalName>admin-tool</finalName>
         <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
@@ -136,18 +160,6 @@
             </properties>
         </profile>
         <profile>
-            <id>nightly</id>
-            <properties>
-                <log.file.directory>/opt/current/nightly-tomcat/logs</log.file.directory>
-            </properties>
-        </profile>
-        <profile>
-            <id>release</id>
-            <properties>
-                <log.file.directory>/opt/current/nightly-tomcat/logs</log.file.directory>
-            </properties>
-        </profile>
-        <profile>
             <id>unisa</id>
             <properties>
                 <log.file.directory>/data/apache-tomcat-7.0.21/logs</log.file.directory>
@@ -169,4 +181,8 @@
             </build>
         </profile>
     </profiles>
+    <ciManagement>
+    	<system>Travis-CI</system>
+    	<url>https://travis-ci.org/Unipoole/admin-tool</url>
+    </ciManagement>
 </project>
