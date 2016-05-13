@@ -30,4 +30,3 @@ If the Maven build is successful there will be a `admin-tool.war` archive in the
 
 ## Documentation
 * [New Client creation](./docs/new-client-creation.md)
-* [Install and Run](./docs/install-and-run.md)
