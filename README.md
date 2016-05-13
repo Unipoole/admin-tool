@@ -27,3 +27,6 @@ ad.authenticationType=simple
 
 ## Deployment
 If the Maven build is successful there will be a `admin-tool.war` archive in the `target` folder of the build. This archive can be deployed to your Tomcat instance
+
+## Documentation
+* [New Client creation](./docs/new-client-creation.md)
